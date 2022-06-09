@@ -93,12 +93,12 @@ export default function Login() {
                                               success == true
                                               ? <p className="text_alignR"> forget Password ? </p>
                                               :  <div><p className="text_alignR"> forget Password ? </p>
-                                              <p className="alert alert-success"> Your Are Log In  </p></div>
+                                              <p className="alert alert-success"> Log in As {formik.values.email}</p></div>
                                             }
                                              {
                                                 fail === true 
                                                 ? ""
-                                                : <p className='alert alert-danger text-center'>Something Wen Wrong</p>
+                                                : <p className='alert alert-danger text-center'>Login Failed</p>
                                             }
                                             <button type="submit" class="btn w-100  p-color">
                                               Login
