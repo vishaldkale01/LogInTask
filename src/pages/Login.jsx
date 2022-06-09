@@ -4,7 +4,9 @@ import logo from "../Assets/img/logo.png"
 import { useFormik } from 'formik'
 import * as yup from "yup"
 import "../Assets/CSS/login.css"
+import PasswordStrengthMeter from '../components/PasswordStrengthMeter'
 export default function Login() {
+  
   const [success, setsuccess] = useState(true)
   const [fail, setfail] = useState(true)
   let result = false
@@ -16,10 +18,9 @@ export default function Login() {
             validationSchema: yup.object({
                 email:yup.string().email("this is not valid").required("can not be empty"),
                 // password:yup.string().required("password can not be empty")
-                password: yup.string()
+          password: yup.string()
           .required('Please Enter your password')
           .matches(
-
             /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
             "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
           ),
@@ -58,7 +59,7 @@ export default function Login() {
                                               <input 
                                                 type="text"
                                                 className={
-                                                    formik.errors.email
+                                                    formik.errors.email 
                                                       ? "form-control is-invalid"
                                                       : "form-control"
                                                   }
@@ -85,6 +86,7 @@ export default function Login() {
                                                     : "form-control"
                                                 }
                                               />
+                                                <PasswordStrengthMeter password={formik.values.password} />
                                               <div class="valid-feedback">Looks good!</div>
                                               <div class="invalid-feedback">{formik.errors.password}.</div>
                                             </div>
