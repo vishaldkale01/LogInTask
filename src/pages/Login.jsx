@@ -39,7 +39,7 @@ export default function Login() {
             <div className="d-flex justify-content-between">
             <div className='Left-main-div'>
                 <div className='left-subDiv'>
-                <img src={logo} className='img-fluid mt-5' alt="" width="200" height="200"  />
+                <img src={logo} className='img-fluid mt-3' alt="" width="200" height="200"  />
                    <p className="mt-2 p-0 text_bold" >India's first waterless <br /> car cleaning company</p> 
                 </div>
             </div>
@@ -48,10 +48,10 @@ export default function Login() {
             <h6 className="card-title mt-3 text_bold text_alignR mr-20">Need Help?</h6>
             <br />
                  
-                            <div  className="card mt-5 form-div" >
+                            <div  className="card  form-div" >
                                       <div class="">
                                         <div class="" >
-                                          <div class="text-center text_bold " >Login</div>
+                                          <div class="text-center text_bold mt-3" >Login</div>
                                           <div class="card-body">
                                             <form onSubmit={formik.handleSubmit} >
                                             <div>
@@ -87,13 +87,12 @@ export default function Login() {
                                                 }
                                               />
                                                 <PasswordStrengthMeter password={formik.values.password} />
-                                              <div class="valid-feedback">Looks good!</div>
-                                              <div class="invalid-feedback">{formik.errors.password}.</div>
+                                              <div class="invalid-feedback">{formik.errors.password}</div>
                                             </div>
                                             {
                                               success == true
-                                              ? <p className=" mb-5 mt-2 text_alignR"> forget Password ? </p>
-                                              :  <div><p className="  mt-2 text_alignR"> forget Password ? </p>
+                                              ? <p className="text_alignR"> forget Password ? </p>
+                                              :  <div><p className="text_alignR"> forget Password ? </p>
                                               <p className="alert alert-success"> Your Are Log In  </p></div>
                                             }
                                              {
@@ -101,7 +100,7 @@ export default function Login() {
                                                 ? ""
                                                 : <p className='alert alert-danger text-center'>Something Wen Wrong</p>
                                             }
-                                            <button type="submit" class="btn w-100 mt-2 p-color">
+                                            <button type="submit" class="btn w-100  p-color">
                                               Login
                                             </button>
                                             </form>
