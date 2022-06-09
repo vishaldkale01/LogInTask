@@ -1,9 +1,9 @@
 import React ,{useState} from 'react'
-import downlod from "../img/downlod.png"
+import logo from "../Assets/img/logo.png"
 // import { Link } from 'react-router-dom'
 import { useFormik } from 'formik'
 import * as yup from "yup"
-import "../pages/CSS/login.css"
+import "../Assets/CSS/login.css"
 export default function Login() {
   const [success, setsuccess] = useState(true)
   const [fail, setfail] = useState(true)
@@ -38,7 +38,7 @@ export default function Login() {
             <div className="d-flex justify-content-between">
             <div className='Left-main-div'>
                 <div className='left-subDiv'>
-                <img src={downlod} className='img-fluid mt-5' alt="" width="200" height="200"  />
+                <img src={logo} className='img-fluid mt-5' alt="" width="200" height="200"  />
                    <p className="mt-2 p-0 text_bold" >India's first waterless <br /> car cleaning company</p> 
                 </div>
             </div>
@@ -99,7 +99,7 @@ export default function Login() {
                                                 ? ""
                                                 : <p className='alert alert-danger text-center'>Something Wen Wrong</p>
                                             }
-                                            <button type="submit" class="btn w-100 mt-2 " style={{backgroundColor : "#1AEBB6"}}>
+                                            <button type="submit" class="btn w-100 mt-2 p-color">
                                               Login
                                             </button>
                                             </form>
